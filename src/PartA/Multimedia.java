@@ -1,4 +1,6 @@
-public class Multimedia {
+import java.util.Objects;
+
+public class Multimedia implements Comparable<Multimedia> {
     private String title;
     private String authorOrPublisher;
     private String type;
@@ -15,14 +17,14 @@ public class Multimedia {
         this.publicationYear = publicationYear;
         this.edition = edition;
         this.rating = rating;
-        
-        // Getters
+    }
+
+    // Getters
     public String getTitle() { return title; }
     public String getAuthorOrPublisher() { return authorOrPublisher; }
     public String getRating() { return rating; }
-    }
     
- // Implement Comparable
+    // Implement Comparable
     @Override
     public int compareTo(Multimedia other) {
         int titleComparison = this.title.compareTo(other.title);
@@ -31,8 +33,8 @@ public class Multimedia {
         }
         return Integer.compare(this.edition, other.edition);
     }
-    
- // equals() method
+
+    // equals() method
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,17 +49,16 @@ public class Multimedia {
                rating.equals(that.rating);
     }
 
- // hashCode() method
+    // hashCode() method
     @Override
     public int hashCode() {
         return Objects.hash(title, authorOrPublisher, type, length, publicationYear, edition, rating);
     }
 
- // toString() method
+    // toString() method
     @Override
     public String toString() {
         return String.format("Multimedia [Title: %s, Author/Publisher: %s, Type: %s, Length: %d, Year: %d, Edition: %d, Rating: %s]",
                 title, authorOrPublisher, type, length, publicationYear, edition, rating);
     }
-
 }
