@@ -31,5 +31,21 @@ public class Multimedia {
         }
         return Integer.compare(this.edition, other.edition);
     }
+    
+ // equals() method
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Multimedia that = (Multimedia) o;
+        return length == that.length &&
+               publicationYear == that.publicationYear &&
+               edition == that.edition &&
+               title.equals(that.title) &&
+               authorOrPublisher.equals(that.authorOrPublisher) &&
+               type.equals(that.type) &&
+               rating.equals(that.rating);
+    }
+
 
 }
