@@ -1,4 +1,6 @@
-public class Book {
+import java.util.Objects;
+
+public class Book implements Comparable<Book> {
     private String title;
     private String author;
     private String genre;
@@ -16,14 +18,14 @@ public class Book {
         this.edition = edition;
         this.rating = rating;
     }
-    
- // Getters
+
+    // Getters
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public int getEdition() { return edition; }
     public String getRating() { return rating; }
-    
- // Implement Comparable
+
+    // Implement Comparable
     @Override
     public int compareTo(Book other) {
         int titleComparison = this.title.compareTo(other.title);
@@ -32,8 +34,8 @@ public class Book {
         }
         return Integer.compare(this.edition, other.edition);
     }
-    
- // equals() method
+
+    // equals() method
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,17 +50,16 @@ public class Book {
                rating.equals(book.rating);
     }
 
- // hashCode() method
+    // hashCode() method
     @Override
     public int hashCode() {
         return Objects.hash(title, author, genre, pageCount, publicationYear, edition, rating);
     }
 
- // toString() method
+    // toString() method
     @Override
     public String toString() {
         return String.format("Book [Title: %s, Author: %s, Genre: %s, Pages: %d, Year: %d, Edition: %d, Rating: %s]",
                 title, author, genre, pageCount, publicationYear, edition, rating);
     }
-    
 }
