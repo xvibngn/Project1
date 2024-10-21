@@ -21,4 +21,15 @@ public class Multimedia {
     public String getAuthorOrPublisher() { return authorOrPublisher; }
     public String getRating() { return rating; }
     }
+    
+ // Implement Comparable
+    @Override
+    public int compareTo(Multimedia other) {
+        int titleComparison = this.title.compareTo(other.title);
+        if (titleComparison != 0) {
+            return titleComparison;
+        }
+        return Integer.compare(this.edition, other.edition);
+    }
+
 }
