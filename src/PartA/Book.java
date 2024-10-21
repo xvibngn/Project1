@@ -54,5 +54,11 @@ public class Book {
         return Objects.hash(title, author, genre, pageCount, publicationYear, edition, rating);
     }
 
-
+ // toString() method
+    @Override
+    public String toString() {
+        return String.format("Book [Title: %s, Author: %s, Genre: %s, Pages: %d, Year: %d, Edition: %d, Rating: %s]",
+                title, author, genre, pageCount, publicationYear, edition, rating);
+    }
+    
 }
