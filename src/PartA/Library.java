@@ -27,4 +27,24 @@ public class Library {
         Collections.sort(books);
         Collections.sort(multimediaItems);
     }
+    
+ // Sort reverse lexicographically by Author and Rating
+    public void sortByAuthorAndRating() {
+        books.sort((b1, b2) -> {
+            int authorComparison = b2.getAuthor().compareTo(b1.getAuthor());
+            if (authorComparison != 0) {
+                return authorComparison;
+            }
+            return b2.getRating().compareTo(b1.getRating());
+        });
+
+        multimediaItems.sort((m1, m2) -> {
+            int authorComparison = m2.getAuthorOrPublisher().compareTo(m1.getAuthorOrPublisher());
+            if (authorComparison != 0) {
+                return authorComparison;
+            }
+            return m2.getRating().compareTo(m1.getRating());
+        });
+    }
+
 }
