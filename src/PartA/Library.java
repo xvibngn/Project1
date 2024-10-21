@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+
 
 public class Library {
     private List<Book> books;
@@ -19,5 +21,10 @@ public class Library {
     public void addMultimedia(Multimedia item) {
         multimediaItems.add(item);
     }
-
+    
+ // Sort lexicographically by Title and then by Edition
+    public void sortByTitleAndEdition() {
+        Collections.sort(books);
+        Collections.sort(multimediaItems);
+    }
 }
