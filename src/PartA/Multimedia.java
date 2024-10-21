@@ -15,5 +15,10 @@ public class Multimedia {
         this.publicationYear = publicationYear;
         this.edition = edition;
         this.rating = rating;
+        
+        // Getters
+    public String getTitle() { return title; }
+    public String getAuthorOrPublisher() { return authorOrPublisher; }
+    public String getRating() { return rating; }
     }
 }
