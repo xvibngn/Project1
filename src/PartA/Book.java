@@ -32,5 +32,27 @@ public class Book {
         }
         return Integer.compare(this.edition, other.edition);
     }
+    
+ // equals() method
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return pageCount == book.pageCount && 
+               publicationYear == book.publicationYear &&
+               edition == book.edition &&
+               title.equals(book.title) &&
+               author.equals(book.author) &&
+               genre.equals(book.genre) &&
+               rating.equals(book.rating);
+    }
+
+ // hashCode() method
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, genre, pageCount, publicationYear, edition, rating);
+    }
+
 
 }
