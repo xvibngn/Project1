@@ -47,5 +47,11 @@ public class Multimedia {
                rating.equals(that.rating);
     }
 
+ // hashCode() method
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, authorOrPublisher, type, length, publicationYear, edition, rating);
+    }
+
 
 }
