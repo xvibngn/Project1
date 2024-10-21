@@ -22,5 +22,15 @@ public class Book {
     public String getAuthor() { return author; }
     public int getEdition() { return edition; }
     public String getRating() { return rating; }
+    
+ // Implement Comparable
+    @Override
+    public int compareTo(Book other) {
+        int titleComparison = this.title.compareTo(other.title);
+        if (titleComparison != 0) {
+            return titleComparison;
+        }
+        return Integer.compare(this.edition, other.edition);
+    }
 
 }
