@@ -53,5 +53,11 @@ public class Multimedia {
         return Objects.hash(title, authorOrPublisher, type, length, publicationYear, edition, rating);
     }
 
+ // toString() method
+    @Override
+    public String toString() {
+        return String.format("Multimedia [Title: %s, Author/Publisher: %s, Type: %s, Length: %d, Year: %d, Edition: %d, Rating: %s]",
+                title, authorOrPublisher, type, length, publicationYear, edition, rating);
+    }
 
 }
