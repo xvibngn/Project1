@@ -57,5 +57,14 @@ public class Library {
         }
         return result;
     }
+    
+ // Print all matching items to the screen
+    public void printMatchingBooks(String titlePrefix) {
+        List<Book> matchingBooks = searchBookByTitle(titlePrefix);
+        for (Book book : matchingBooks) {
+            System.out.println(book);
+        }
+    }
+
 
 }
