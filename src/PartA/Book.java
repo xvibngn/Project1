@@ -16,4 +16,11 @@ public class Book {
         this.edition = edition;
         this.rating = rating;
     }
+    
+ // Getters
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public int getEdition() { return edition; }
+    public String getRating() { return rating; }
+
 }
