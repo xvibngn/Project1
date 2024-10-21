@@ -46,5 +46,16 @@ public class Library {
             return m2.getRating().compareTo(m1.getRating());
         });
     }
+    
+ // Search books by title (starts with search)
+    public List<Book> searchBookByTitle(String titlePrefix) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().startsWith(titlePrefix)) {
+                result.add(book);
+            }
+        }
+        return result;
+    }
 
 }
